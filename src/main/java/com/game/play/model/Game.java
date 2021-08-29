@@ -16,10 +16,9 @@ public class Game {
 	
     private String gameId;
     private GameStatus status;
-    private String whosNext; 
-    private String winner; 
+    private GameOptions whosNext; 
+    private GameOptions winner; 
     private String[][] playingBoard;	
-
 
 
 }

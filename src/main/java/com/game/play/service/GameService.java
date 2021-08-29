@@ -3,6 +3,7 @@ package com.game.play.service;
 import org.springframework.stereotype.Service;
 
 import com.game.play.model.Game;
+import com.game.play.model.GameMove;
 
 @Service
 public class GameService {
@@ -14,7 +15,7 @@ public class GameService {
 		return game;
 	}
 
-	public Game registerMove(String move)  {
+	public Game registerMove(GameMove move)  {
 
 		Game game = new Game();
 		
