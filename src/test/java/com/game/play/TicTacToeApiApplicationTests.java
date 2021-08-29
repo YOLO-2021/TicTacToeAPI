@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.game.play.controller.TicTacToeController;
+import com.game.play.exception.GameNotFoundException;
 import com.game.play.exception.InvalidMoveException;
 import com.game.play.exception.TicTacToeException;
 import com.game.play.model.Game;
@@ -204,13 +205,26 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testGameStatus() throws TicTacToeException {
+	public void testGameStatus_scenario1() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 
 		ResponseEntity<Game> respEntity = controller.gameStatus(respEntityGame.getBody().getGameId());
 		assertEquals(respEntityGame.getBody().getGameId(), respEntity.getBody().getGameId());
 		assertEquals(HttpStatus.OK, respEntity.getStatusCode());
+		
+	}
+	
+	/**
+	 * Negative test case
+	 * Test for game status
+	 * A game is created and when the game is queried using the ID , the game set is returned 
+	 * @throws TicTacToeException 
+	 */
+	@Test
+	public void testGameStatus_scenario2() throws TicTacToeException {
+
+		Assertions.assertThrows(GameNotFoundException.class,()-> controller.gameStatus("dummy"));
 		
 	}
 	
@@ -287,6 +301,29 @@ class TicTacToeApiApplicationTests {
 		controller.playGame(move2);
 		controller.playGame(move3);
 		Assertions.assertThrows(InvalidMoveException.class, () -> controller.playGame(move4));
+		
+	}
+	
+	/**
+	 * Negative Test Case 
+	 * Test for the faulty  move 
+	 * Expectation : when X tries to enter 10
+	 * @throws TicTacToeException 
+	 */
+	@Test
+	public void testPlayGame_Scenario13() throws TicTacToeException {
+		
+		ResponseEntity<Game> respEntityGame = controller.startGame();
+		
+		GameMove move1 = new GameMove(respEntityGame.getBody().getGameId(),GameOptions.X,0);
+		GameMove move2 = new GameMove(respEntityGame.getBody().getGameId(),GameOptions.O,4);
+		GameMove move3 = new GameMove(respEntityGame.getBody().getGameId(),GameOptions.X,1);
+		GameMove move4 = new GameMove(respEntityGame.getBody().getGameId(),GameOptions.X,10);
+
+		controller.playGame(move1);
+		controller.playGame(move2);
+		controller.playGame(move3);
+		Assertions.assertThrows(Exception.class, () -> controller.playGame(move4));
 		
 	}
 	

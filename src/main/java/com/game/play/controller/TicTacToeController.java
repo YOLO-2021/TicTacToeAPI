@@ -52,7 +52,7 @@ public class TicTacToeController {
 	 * 
 	 * This end point gets gameId as input and returns game status
 	 */
-	@GetMapping("/{gameId}")
+	@GetMapping("/status/{gameId}")
 	public ResponseEntity<Game> gameStatus(@PathVariable String gameId) throws TicTacToeException {
 		
 		return ResponseEntity.ok(gameService.gameStatus(gameId));

@@ -33,6 +33,7 @@ public class GameServiceImpl implements GameService {
 		
 		gameServiceUtils.validateMove(move, game);
 
+		//get position and register move
 		int[] coordinates = move.getCoordinates();
 		game.getPlayingBoard()[coordinates[0]][coordinates[1]] = move.getPlayer().toString();
 
