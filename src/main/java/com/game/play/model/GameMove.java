@@ -3,6 +3,8 @@ package com.game.play.model;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
+import com.game.play.utils.GameUtils;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GameMove {
-	
-	private static final int[][] coordinateConstants = new int[][] {{0,0},{0,1},{0,2},{1,0},{1,1},{1,2},{2,0},{2,1},{2,2}};
 	
 	
 	@NotNull
@@ -26,7 +26,7 @@ public class GameMove {
 
 	public int[] getCoordinates() {
 		
-		return coordinateConstants[position];
+		return GameUtils.coordinateConstants[position];
 	}
 
 }
