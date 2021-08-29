@@ -28,13 +28,10 @@ The rules are described below :
 - this will create a new game and return a unique gameId - 
 
 # POST: localhost:8080/playgame
-inputs 
-{
-    "gameId": <gameId>,
-    "player" : "X", // this should be either X or O , to mention which player make the move 
-    "position" : "8" // position value is valid between 0 - 9. this denotes the position of tictactoe board . 
-                     // please refer the image below for position values 
-}
+-inputs 
+-    "gameId": <gameId>,
+-    "player" : "X", // this should be either X or O , to mention which player make the move 
+-    "position" : "8" // position value is valid between 0 - 9. this denotes the position of tictactoe board . please refer the image below for position values 
 
 ![Alt text](tic-tac-toe-board.png?raw=true "Tic Tac Toe")
 
