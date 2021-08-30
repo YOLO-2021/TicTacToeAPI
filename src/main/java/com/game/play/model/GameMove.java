@@ -33,7 +33,7 @@ public class GameMove {
 	@JsonIgnore
 	public int[] getCoordinates() {
 		
-		return GameUtils.coordinateConstants[position];
+		return GameUtils.COORDINATE_CONSTANTS[position];
 	}
 
 }

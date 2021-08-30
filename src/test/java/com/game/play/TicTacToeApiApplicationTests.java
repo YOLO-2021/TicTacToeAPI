@@ -55,7 +55,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario1() throws TicTacToeException {
+	public void testPlayGameScenario1() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		GameMove move = new GameMove(respEntityGame.getBody().getGameId(),GameOptions.X,0);
@@ -75,7 +75,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario2() throws TicTacToeException {
+	public void testPlayGameScenario2() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		
@@ -106,7 +106,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario3() throws TicTacToeException {
+	public void testPlayGameScenario3() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 
@@ -138,7 +138,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario4() throws TicTacToeException {
+	public void testPlayGameScenario4() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 
@@ -168,7 +168,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario5() throws TicTacToeException {
+	public void testPlayGameScenario5() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 
@@ -205,7 +205,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testGameStatus_scenario1() throws TicTacToeException {
+	public void testGameStatusscenario1() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 
@@ -222,7 +222,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testGameStatus_scenario2() throws TicTacToeException {
+	public void testGameStatusscenario2() throws TicTacToeException {
 
 		Assertions.assertThrows(GameNotFoundException.class,()-> controller.gameStatus("dummy"));
 		
@@ -237,7 +237,7 @@ class TicTacToeApiApplicationTests {
 	 */
 	//@Test(expected  = InvalidMoveException.class)
 	@Test
-	public void testPlayGame_Scenario10() throws TicTacToeException {
+	public void testPlayGameScenario10() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		
@@ -263,7 +263,7 @@ class TicTacToeApiApplicationTests {
 	 */
 	//@Test(expected  = InvalidMoveException.class)
 	@Test
-	public void testPlayGame_Scenario11() throws TicTacToeException {
+	public void testPlayGameScenario11() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		
@@ -288,7 +288,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario12() throws TicTacToeException {
+	public void testPlayGameScenario12() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		
@@ -311,7 +311,7 @@ class TicTacToeApiApplicationTests {
 	 * @throws TicTacToeException 
 	 */
 	@Test
-	public void testPlayGame_Scenario13() throws TicTacToeException {
+	public void testPlayGameScenario13() throws TicTacToeException {
 		
 		ResponseEntity<Game> respEntityGame = controller.startGame();
 		

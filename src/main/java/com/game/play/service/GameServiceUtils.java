@@ -74,13 +74,13 @@ public class GameServiceUtils {
 		String[][] playingBoard = game.getPlayingBoard();
 		int playedPosition = move.getPosition();
 		
-		List<List<Integer>> patternsToVerify = GameUtils.winPatterns.stream().filter(x -> x.contains(playedPosition) == true)
+		List<List<Integer>> patternsToVerify = GameUtils.WIN_PATTERNS.stream().filter(x -> x.contains(playedPosition) == true)
 				.collect(Collectors.toList());
 
 		for (List<Integer> lst : patternsToVerify) {
-			int[] coordinate1 = GameUtils.coordinateConstants[lst.get(0)];
-			int[] coordinate2 = GameUtils.coordinateConstants[lst.get(1)];
-			int[] coordinate3 = GameUtils.coordinateConstants[lst.get(2)];
+			int[] coordinate1 = GameUtils.COORDINATE_CONSTANTS[lst.get(0)];
+			int[] coordinate2 = GameUtils.COORDINATE_CONSTANTS[lst.get(1)];
+			int[] coordinate3 = GameUtils.COORDINATE_CONSTANTS[lst.get(2)];
 
 			if (move.getPlayer().toString().equals(playingBoard[coordinate1[0]][coordinate1[1]])
 					&& move.getPlayer().toString().equals(playingBoard[coordinate2[0]][coordinate2[1]])

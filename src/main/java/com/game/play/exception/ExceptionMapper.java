@@ -12,7 +12,7 @@ public class ExceptionMapper {
 
 	
 	@ExceptionHandler(InvalidMoveException.class)
-	public ResponseEntity<ErrorInfo> InvalidMoveException(TicTacToeException ex) {
+	public ResponseEntity<ErrorInfo> invalidMoveException(TicTacToeException ex) {
 		
 		ErrorInfo info = new ErrorInfo(ex.getMessage());
 		return new ResponseEntity<>(info,HttpStatus.BAD_REQUEST);
